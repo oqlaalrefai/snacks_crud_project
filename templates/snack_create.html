@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>
+    Create a Snack:
+</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="Create">
+</form>
+
+<div>
+    <a href="{% url 'snacks' %}">Go Back</a>
+</div>
+
+{% endblock %}

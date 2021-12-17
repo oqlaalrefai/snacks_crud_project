@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    Update Snack:
+</h1>
+<form method="POST" action="{% url 'snack_update' snack.pk %}">
+    {% csrf_token %}
+    {{form.as_table}}
+    <input type="submit" value="Update">
+</form>
+
+<div>
+    <a href="{% url 'snacks' %}">Go Back</a>
+</div>
+{% endblock  %}
